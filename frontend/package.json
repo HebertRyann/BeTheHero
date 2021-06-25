@@ -1,6 +1,5 @@
 {
   "name": "frontend",
-  "homepage": "https://hebertryann.github.io/BetheHero",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
