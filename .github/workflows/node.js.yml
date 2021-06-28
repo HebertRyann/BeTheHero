@@ -26,8 +26,13 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
 <<<<<<< HEAD
+<<<<<<< HEAD
     - run: npm ci
     - run: npm run build --if-present
+=======
+    - run: npm install
+    - run: npm run build
+>>>>>>> c8eafa6a1061180f499822ed91d3cb2bdb30dba7
 =======
     - run: npm install
     - run: npm run build
