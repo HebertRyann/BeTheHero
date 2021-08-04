@@ -99,3 +99,18 @@ $ npm run <sistema operacional>
 
 # Se todas as configurações do emulador estiverem corretas, o próprio terminal vai identificar o emulador e vai  automaticamente  iniciar e instalar o apk e outras dependências necessárias para utilizar o aplicativo, apos a instalação o aplicativo estará pronto para ser utilizado
 ```
+
+### Autor
+---
+
+<a href="https://www.linkedin.com/in/hebertryansantos/">
+ <img style="border-radius: 50%;" src="https://avatars.githubusercontent.com/u/58072948?v=4" width="100px;" alt=""/>
+ <br />
+ <sub><b>Hebert Santos</b></sub></a> <a href="https://www.linkedin.com/in/hebertryansantos/" title="Perfil">🚀</a>
+
+Projeto criado como material de estudos da semana Omnistack 📚
+Feito com ❤️ por Hebert Santos Com o intuito de consolidar meus conhecimentos 👋🏽 Entre em contato!
+#### Para conferir mais sobre meu trabalho e ver mais projetos acesse meu [Portfolio](https://hebertryann.github.io/portfolio/)
+
+[![Linkedin Badge](https://img.shields.io/badge/-Hebert-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/hebertryansantos/)](https://www.linkedin.com/in/hebertryansantos/) 
+[![Gmail Badge](https://img.shields.io/badge/-hebertryann40@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:hebertryann40@gmail.com)](mailto:hebertryann40@gmail.com)
