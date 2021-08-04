@@ -1,3 +1,5 @@
+<img alt="License" src="https://img.shields.io/badge/license-MIT-brightgreen">
+
 <h1 align="center">
   <img alt="BeTheHero" title="#BeTheHero" src="./frontend/src/assets/logo.svg" />
 </h1>
@@ -11,12 +13,9 @@
 🚀 Be The Hero Concluido ✔
 </h4>
 
+
 <p align="center">
- <a href="#objetivo">Objetivo</a> •
- <a href="#roadmap">Roadmap</a> • 
- <a href="#tecnologias">Tecnologias</a> • 
- <a href="#contribuicao">Contribuição</a> • 
- <a href="#licenc-a">Licença</a> • 
+ <a href="#-tecnologias">Tecnologias</a> • 
  <a href="#autor">Autor</a>
 </p>
 
