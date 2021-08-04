@@ -5,7 +5,7 @@
 </h1>
 
 <h1 align="center">
-    <a href="https://hebertryann.github.io/react-gh-pages/#/">BeTheHero</a>
+    <a href="https://hebertryann.github.io/react-gh-pages/#/">Visite a pagina BeTheHero</a>
 </h1>
 <p align="center"Plataforma para auxiliar ongs a compartilhar seus casos, junto a versão mobile onde os usuario podem ver todos os casos de varias ongs e ajuda-lás</p>
 
