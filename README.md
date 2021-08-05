@@ -17,11 +17,13 @@
 
 <h2 align="center">
   Login
+  <br/>
   <img alt="Login BeTheHero" src="./frontend/src/assets/betheherologin.jpeg"/>
 </h2>
 
 <h2 align="center">
   Dashboard
+  
   <img alt="Dashboard BeTheHero" src="./frontend/src/assets/betheherodashboard.jpeg"/>
 </h2>
 
