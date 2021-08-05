@@ -16,24 +16,25 @@
 </h4>
 
 <h2 align="center">
-  Login
-  <br/>
+  <p>Login</p>
   <img alt="Login BeTheHero" src="./frontend/src/assets/betheherologin.jpeg"/>
 </h2>
 
 <h2 align="center">
-  Dashboard
   
+  <p>Dashboard</p>
   <img alt="Dashboard BeTheHero" src="./frontend/src/assets/betheherodashboard.jpeg"/>
 </h2>
 
 <h2 align="center">
-  Cadastro de Ong
+  
+  <p>Cadastro de Ong</p>
   <img alt="Cadastro BeTheHero" src="./frontend/src/assets/betheherosignup.jpeg"/>
 </h2>
 
 <h2 align="center">
-  Cadastro de um novo caso
+  
+  <p>Cadastro de um novo caso</p>
   <img alt="Novo Caso BeTheHero" src="./frontend/src/assets/betheheronew.jpeg"/>
 </h2>
 
