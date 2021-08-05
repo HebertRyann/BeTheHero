@@ -7,11 +7,33 @@
 <h3 align="center">
     <a href="https://hebertryann.github.io/react-gh-pages/#/">Teste o BeTheHero</a>
 </h3>
-<p align="center"Plataforma para auxiliar ongs a compartilhar seus casos, junto a versão mobile onde os usuario podem ver todos os casos de varias ongs e ajuda-lás</p>
+<p align="center">
+  Plataforma para auxiliar ongs a compartilhar seus casos, junto a versão mobile onde os usuario podem ver todos os casos de varias ongs e ajuda-lás
+</p>
 
 <h4 align="center"> 
 🚀 Be The Hero Concluido ✔
 </h4>
+
+<h2 align="center">
+  Login
+  <img alt="Login BeTheHero" src="./frontend/src/assets/betheherologin.jpeg"/>
+</h2>
+
+<h2 align="center">
+  Dashboard
+  <img alt="Dashboard BeTheHero" src="./frontend/src/assets/betheherodashboard.jpeg"/>
+</h2>
+
+<h2 align="center">
+  Cadastro de Ong
+  <img alt="Cadastro BeTheHero" src="./frontend/src/assets/betheherosignup.jpeg"/>
+</h2>
+
+<h2 align="center">
+  Cadastro de um novo caso
+  <img alt="Novo Caso BeTheHero" src="./frontend/src/assets/betheheronew.jpeg"/>
+</h2>
 
 
 <p align="center">
@@ -23,11 +45,11 @@
 
 As seguintes ferramentas foram usadas na construção do projeto:
 
-- [Expo](https://expo.io/)
-- [Node.js](https://nodejs.org/en/)
-- [React](https://pt-br.reactjs.org/)
-- [React Native](https://reactnative.dev/)
-- [TypeScript](https://www.typescriptlang.org/)
+- Expo
+- Node.js
+- React
+- React Native
+- TypeScript
 
 ## Teste Local
 ### Pré-requisitos
