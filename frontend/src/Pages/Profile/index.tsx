@@ -4,9 +4,11 @@ import { Link, useHistory } from 'react-router-dom';
 import { FiPower, FiTrash2 } from 'react-icons/fi';
 import api from '../../services/api'
 import './style.css'
+import { IIncident } from '../../types';
+
 
 export default function Profile(){
-    const [incidents, setIncidents] = useState([]);
+    const [incidents, setIncidents] = useState<IIncident[]>([]);
     const history = useHistory();
     const ongName = localStorage.getItem('ongName');
     const ongId = localStorage.getItem('ongId');
@@ -21,7 +23,7 @@ export default function Profile(){
 
     }, [ongId]);
 
-    async function handleDeleteIncident(id){
+    async function handleDeleteIncident(id: string){
         try {
             await api.delete(`incidents/${id}`, {
                 headers: {

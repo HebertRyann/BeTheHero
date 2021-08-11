@@ -6,12 +6,13 @@ import api from '../../services/api'
 import './style.css';
 import heroesImg from '../../assets/heroes.png'; 
 import logoImg from '../../assets/logo.svg'
+import { FormEvent } from 'react';
 
 export default function Logon(){
     const [id, setId] = useState('');
-    const history = useHistory('');
+    const history = useHistory();
 
-    async function handlerLogin(e){
+    async function handlerLogin(e: FormEvent<HTMLFormElement>){
         e.preventDefault();
         try{
             const response = await api.post('sessions', { id });

@@ -4,6 +4,7 @@ import { Link, useHistory } from 'react-router-dom';
 import { FiArrowLeft} from 'react-icons/fi';
 import logoImg from '../../assets/logo.svg';
 import api from '../../services/api';
+import { FormEvent } from 'react';
 
 
 export default function Newincident(){
@@ -13,7 +14,7 @@ export default function Newincident(){
     const history = useHistory();
     const ongId = localStorage.getItem('ongId')
 
-    async function handlerNewIncident(e){
+    async function handlerNewIncident(e: FormEvent){
         e.preventDefault();
 
         const data = {

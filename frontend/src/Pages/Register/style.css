@@ -48,3 +48,33 @@
 .register-container .content form .input-group input + input {
     margin-left: 8px;
 }
+.ModalConfirmed {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    margin-left: -250px;
+    background: #fff;
+    height: 110px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    max-width: 550px;
+    animation: 1s ease-in-out fadeUpToDown;
+}
+
+.ModalConfirmed strong {
+    font-size: 16px;
+}
+
+@keyframes fadeUpToDown {
+    from {
+        transform: translateY(-120%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
