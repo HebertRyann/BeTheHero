@@ -19,7 +19,8 @@ class IncidentsController {
 
     async create(request: Request, response: Response) {
         const { title, description, value } = request.body;
-        const ong_id = "d5ccb00a-21f9-445c-9f5f-784921978562";
+        const ong_id = request.headers.authorization;
+        console.log(ong_id)
         
         try {
             const incidentsService = new IncidentsService();

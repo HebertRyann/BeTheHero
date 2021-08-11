@@ -9,20 +9,21 @@ import logoImg from '../../assets/logo.svg'
 import { FormEvent } from 'react';
 
 export default function Logon(){
-    const [id, setId] = useState('');
+    const [name, setName] = useState('');
+    const [password, setPassword] = useState('');
     const history = useHistory();
 
     async function handlerLogin(e: FormEvent<HTMLFormElement>){
         e.preventDefault();
         try{
-            const response = await api.post('sessions', { id });
-
-            localStorage.setItem('ongId', id);
+            const response = await api.post('session', { name });
+            
+            localStorage.setItem('ongID', response.data.id);
             localStorage.setItem('ongName', response.data.name);
             history.push('/profile');
         }catch (err){
-            alert('Falaha')
-
+            console.log(err.message)
+            alert('Falha')
         }
     }
 
@@ -33,9 +34,13 @@ export default function Logon(){
 
                 <form onSubmit={handlerLogin}>
                     <h1>Faça Seu logon</h1>
-                    <input placeholder="Sua ID"
-                        value={id}
-                        onChange={e => setId(e.target.value)}
+                    <input placeholder="Seu Nome"
+                        value={name}
+                        onChange={e => setName(e.target.value)}
+                    />
+                    <input placeholder="Sua Senha"
+                        value={password}
+                        onChange={e => setPassword(e.target.value)}
                     />
                     <button className="button" type="submit">Entrar</button>
 

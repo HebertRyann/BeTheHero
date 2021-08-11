@@ -1,25 +1,41 @@
+import { compare } from "bcryptjs";
+import { sign } from "jsonwebtoken";
 import { getCustomRepository, Repository } from "typeorm";
-import { Session } from "../entities/Session";
-import { SessionRepository } from "../repositories/SessionRepository";
+import { Ong } from "../entities/Ong";
+import { OngRepository } from "../repositories/OngRepository";
 
 class SessionService {
-  private sessionRepository: Repository<Session>;
+  private ongRepository: Repository<Ong>;
 
   constructor() {
-    this.sessionRepository = getCustomRepository(SessionRepository);
+    this.ongRepository = getCustomRepository(OngRepository);
   }
 
-  async create(name: string) {
-    const findOng = await this.sessionRepository.findOne({
+  async execute(name: string, password: string) {
+    const findOng = await this.ongRepository.findOne({
       where: {
         name
       } 
-    })
+    });
 
-    if(findOng) {
-      return findOng
+    if (!findOng) {
+      throw new Error('This name/password is incorrect');  
     }
-    throw new Error('This name not found');
+
+    const comparePassword = await compare(password, findOng.password)
+    
+    if(comparePassword) {
+      const token = sign({}, process.env.SECRET_STRING_HASH, {
+        subject: findOng.id,
+        expiresIn: '1d'
+      })
+      return {
+        ong: findOng,
+        token
+      }
+    }
+
+    throw new Error('This name/password is incorrect');
   };
 }
 

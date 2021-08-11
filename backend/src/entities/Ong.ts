@@ -11,6 +11,9 @@ class Ong {
 
   @Column()
   email: string;
+  
+  @Column()
+  password: string;
 
   @Column()
   whatsapp: string;

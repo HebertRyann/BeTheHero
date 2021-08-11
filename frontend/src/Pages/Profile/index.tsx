@@ -11,7 +11,7 @@ export default function Profile(){
     const [incidents, setIncidents] = useState<IIncident[]>([]);
     const history = useHistory();
     const ongName = localStorage.getItem('ongName');
-    const ongId = localStorage.getItem('ongId');
+    const ongId = localStorage.getItem('ongID');
     useEffect(() => {
        api.get('profile', {
            headers: {
@@ -45,7 +45,6 @@ export default function Profile(){
     return (
         <div className="profile-container">
             <header>
-                <img src={logoimg} alt="Be The Hero"/>
                 <span>Bem Vinda, {ongName}</span>
 
                 <Link className="button" to="/incidents/new">Cadastra Novo Caso</Link>
@@ -69,7 +68,7 @@ export default function Profile(){
                     <p>{Intl.NumberFormat('pt-BR', {style: 'currency', currency: 'BRL'}).format(incident.value)}</p>
 
                     <button onClick={() => handleDeleteIncident(incident.id)} type="button">
-                        <FiTrash2 size={20} color="#a8a8b3"/>
+                        <FiTrash2 size={20} />
                     </button>
                 </li>
                 ))}

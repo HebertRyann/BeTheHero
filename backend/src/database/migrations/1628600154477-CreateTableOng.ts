@@ -20,7 +20,12 @@ export class CreateTableOng1628600154477 implements MigrationInterface {
                     {
                         name: 'email',
                         type: 'varchar',
-                        isNullable: true
+                        isNullable: false
+                    },
+                    {
+                        name: 'password',
+                        type: 'varchar',
+                        isNullable: false
                     },
                     {
                         name: 'whatsapp',

@@ -16,7 +16,6 @@ class IncidentsService {
   }
 
   async create({ description, id, ong_id, title, value }: IIncidentCreate) {
-    console.log(description, id, ong_id, title, value)
     const incident = this.incidentsRepository.create({
       description,
       id,

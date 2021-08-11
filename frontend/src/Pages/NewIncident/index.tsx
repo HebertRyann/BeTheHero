@@ -12,7 +12,7 @@ export default function Newincident(){
     const [description, setDescription] = useState('');
     const [value, setValue] = useState('');
     const history = useHistory();
-    const ongId = localStorage.getItem('ongId')
+    const ongId = localStorage.getItem('ongID')
 
     async function handlerNewIncident(e: FormEvent){
         e.preventDefault();
@@ -27,12 +27,11 @@ export default function Newincident(){
             await api.post('incidents',data,{
                 headers: {
                     Authorization: ongId,
-
                 }
             })
             history.push('/profile');
         } catch (err) {
-            alert('erro ao castradr caso')
+            alert('Erro ao cadastrar o seu caso')
         }
 
     }
@@ -43,7 +42,7 @@ export default function Newincident(){
                 <section>
                     <img src={logoImg} alt="Be The Hero"/>
                     <h1>Cadastra Novo Caso</h1>
-                    <p>Descreva o caso Detalhadamente para encontrar um heroi para resolver isso.</p>
+                    <p>Descreva o caso detalhadamente para encontrar um heroi para resolver isso.</p>
                     <Link className="back-link" to="/profile">
                         <FiArrowLeft size={16} color="#E02041"/>
                         Voltar para Home

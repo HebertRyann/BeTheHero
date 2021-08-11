@@ -2,6 +2,7 @@ import { getCustomRepository, Repository } from "typeorm";
 import { Ong } from "../entities/Ong";
 import { OngRepository } from "../repositories/OngRepository";
 import { IOngCreate } from "../types";
+import { hash } from "bcryptjs";
 
 class OngService {
   private ongRepository: Repository<Ong>;
@@ -15,18 +16,27 @@ class OngService {
     return ongs
   }
 
-  async create({ city, email, name, uf, whatsapp, id }: IOngCreate) {
-    const ong = this.ongRepository.create({
-      city,
-      email,
-      name,
-      uf,
-      whatsapp,
-      id,
-    });
+  async create({ city, email, name, uf, whatsapp, id, password }: IOngCreate) {
+    const findOng = await this.ongRepository.findOne({ where: { name } });
 
-    await this.ongRepository.save(ong);
-    return ong;
+    const hashedPassword = await hash(password, 8);
+
+    if(!findOng){
+      const ong = this.ongRepository.create({
+        city,
+        email,
+        name,
+        password: hashedPassword,
+        uf,
+        whatsapp,
+        id,
+      });
+
+      await this.ongRepository.save(ong);
+
+      return ong;
+    }
+    throw new Error("This name already used");
   }
 
   async findOng(name: string) {

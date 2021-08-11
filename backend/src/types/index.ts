@@ -4,6 +4,8 @@ export interface IOngCreate {
   name: string;
    
   email: string;
+  
+  password: string;
    
   whatsapp: string;
    

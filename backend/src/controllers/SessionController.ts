@@ -1,15 +1,16 @@
 import { Response, Request } from 'express';
-import { OngService } from '../service/OngService';
+import { SessionService } from '../service/SessionService';
 
 class SessionController {
     async create(request: Request, response: Response) {
-        const ongService = new OngService();
+        const sessionService = new SessionService();
         try {
-            const { name } = request.body;
-            const ong = await ongService.findOng(name);
-            return response.json(ong);
+            const { name, password } = request.body;
+            const { ong, token } = await sessionService.execute(name, password);
+            delete ong.password
+            return response.json({ ong, token });
         } catch (error) {
-            return response.status(400).json(error)
+            return response.status(400).json(error.message)
         }
     };
 }
