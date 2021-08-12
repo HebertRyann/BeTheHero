@@ -10,9 +10,13 @@ class IncidentsService {
     this.incidentsRepository = getCustomRepository(IncidentsRepository);
   }
 
-  async index() {
-    const incidents = await this.incidentsRepository.find();
-    return incidents;
+  async index(skip: number) {
+    const incidents = await this.incidentsRepository.find({
+      take: 5,
+      skip,
+    });
+    const total = await this.incidentsRepository.find()
+    return { incidents, total: total.length };
   }
 
   async create({ description, id, ong_id, title, value }: IIncidentCreate) {

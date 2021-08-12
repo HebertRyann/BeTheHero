@@ -4,6 +4,7 @@ import { OngController } from './controllers/OngController';
 import { IncidentsController } from './controllers/IncidentsController';
 import { ProfileController } from './controllers/ProfileController';
 import { SessionController } from './controllers/SessionController';
+import { autheticate } from './middlewares/autheticate';
 
 const routes = express.Router();
 
@@ -12,6 +13,7 @@ const ongController = new OngController();
 const profileController = new ProfileController();
 const incidentsController = new IncidentsController();
 
+routes.get('/session', autheticate ,sessionController.index)
 routes.post('/session', sessionController.create)
 
 routes.get('/ongs', ongController.index);

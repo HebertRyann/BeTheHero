@@ -11,7 +11,6 @@ class ProfileService {
 
   async index(ong_id: string) {
     const incidents = await this.incidentRepository.find({ where: { ong_id }});
-    console.log(ong_id, incidents);
 
     if(incidents){
       return incidents

@@ -4,6 +4,7 @@ import logoImg from '../../assets/logo.svg'
 import {Link, useHistory} from 'react-router-dom';
 import {FiArrowLeft} from 'react-icons/fi';import api from '../../services/api';
 import { FormEvent } from 'react';
+import { Input } from '../../components/Input';
 export default function Register(){
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
@@ -47,28 +48,43 @@ export default function Register(){
                     </Link>
                 </section>
                 <form onSubmit={handlerRegister}>
-                    <input placeholder="Nome Da ONG"
+                    <Input
+                        name="" 
+                        placeholder="Nome Da ONG"
                         value={name}
                         onChange={e => setName(e.target.value)}
                     />
-                    <input type="email" placeholder="E-mail"
+                    <Input
+                        name="" 
+                        type="email" 
+                        placeholder="E-mail"
                         value={email}
                         onChange={e => setEmail(e.target.value)}
                     />
-                    <input placeholder="Whatsapp"
+                    <Input
+                        name="" 
+                        placeholder="Whatsapp"
                         value={whatsapp}
                         onChange={e => setWhatsapp(e.target.value)}
                     />
-                    <input placeholder="Senha"
+                    <Input
+                        name="" 
+                        placeholder="Senha"
                         value={password}
                         onChange={e => setPassword(e.target.value)}
                     />
                     <div className="input-group">
-                        <input placeholder="Cidade"
+                        <Input 
+                            name=""
+                            placeholder="Cidade"
                             value={city}
                             onChange={e => setCity(e.target.value)}
                         />
-                        <input placeholder="UF" style={{ width: 80 }}
+                        <Input 
+                            name=""
+                            placeholder="UF" 
+                            styleCustom={{ maxWidth: 100, marginLeft: 5 }}
+                            style={{ width: 100, textAlign: 'center' }}
                             value={uf}
                             onChange={e => setUf(e.target.value)}
                         />

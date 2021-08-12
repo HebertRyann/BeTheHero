@@ -7,7 +7,8 @@ class IncidentsController {
         const incidentsService = new IncidentsService();
         
         try {
-            const incidents = await incidentsService.index()
+            const { page } =request.params;
+            const incidents = await incidentsService.index(page !== "1" ? 5 : 0)
 
             return response.json(incidents);
         } catch (error) {
@@ -18,7 +19,7 @@ class IncidentsController {
     };
 
     async create(request: Request, response: Response) {
-        const { title, description, value } = request.body;
+        const { title, description, value, ong_name } = request.body;
         const ong_id = request.headers.authorization;
         console.log(ong_id)
         
@@ -29,7 +30,8 @@ class IncidentsController {
                 id: v4(),
                 ong_id,
                 title,
-                value
+                value,
+                // ong_name,
             })       
             return response.json(incident);
         } catch (error) {

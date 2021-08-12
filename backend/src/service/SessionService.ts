@@ -37,6 +37,21 @@ class SessionService {
 
     throw new Error('This name/password is incorrect');
   };
+
+  async index(id: string) {
+    const ong = await this.ongRepository.findOne({
+      where: {
+        id,
+      }
+    });
+
+
+    if(!ong) {
+      throw new Error('This ong ID not found');
+    }
+    return ong;
+  };
+
 }
 
 export { SessionService };

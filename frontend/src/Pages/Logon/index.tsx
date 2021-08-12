@@ -7,23 +7,27 @@ import './style.css';
 import heroesImg from '../../assets/heroes.png'; 
 import logoImg from '../../assets/logo.svg'
 import { FormEvent } from 'react';
+import { Input } from '../../components/Input';
+import { useAuth } from '../../hooks/Auth';
 
 export default function Logon(){
     const [name, setName] = useState('');
     const [password, setPassword] = useState('');
-    const history = useHistory();
+    const [isError, setIsError] = useState(false);
+    const { signIn } = useAuth();
 
     async function handlerLogin(e: FormEvent<HTMLFormElement>){
         e.preventDefault();
         try{
-            const response = await api.post('session', { name });
-            
-            localStorage.setItem('ongID', response.data.id);
-            localStorage.setItem('ongName', response.data.name);
-            history.push('/profile');
+            await signIn(name, password);
+
         }catch (err){
+
             console.log(err.message)
-            alert('Falha')
+            setIsError(true);
+            // setTimeout(() => {
+            //     setIsError(false);
+            // }, 2000)
         }
     }
 
@@ -33,14 +37,30 @@ export default function Logon(){
                 <img src={logoImg} alt="Be The Hero"/>
 
                 <form onSubmit={handlerLogin}>
+
                     <h1>Faça Seu logon</h1>
-                    <input placeholder="Seu Nome"
+
+                    {isError && (
+                        <div className="ContainerErrorLogin">
+                            <p>Erro ao tentar se cadastrar</p>
+                        </div>
+                    )}
+
+                    <Input 
+                        name="Name"
+                        placeholder="Nome da ong"
                         value={name}
                         onChange={e => setName(e.target.value)}
                     />
-                    <input placeholder="Sua Senha"
+                    <Input 
+                        name="Password"
+                        placeholder="Sua senha"
+                        type="password"
                         value={password}
                         onChange={e => setPassword(e.target.value)}
+                        style={{
+                            marginTop: '8px'
+                        }}
                     />
                     <button className="button" type="submit">Entrar</button>
 
